@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delete Your Account</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --heading: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: rgb(102, 8, 116);
+      --warning: #dc2626;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fafc 0%, var(--bg) 100%);
+      padding: 2rem 1rem;
+    }
+
+    .policy {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--heading);
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      line-height: 1.25;
+    }
+
+    h2 {
+      margin: 2rem 0 0.6rem;
+      color: var(--heading);
+      font-size: 1.15rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 0.6rem;
+    }
+
+    h3 {
+      margin: 1.5rem 0 0.6rem;
+      color: var(--heading);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0.55rem 0;
+    }
+
+    ul {
+      margin: 0.6rem 0 0.8rem 1.2rem;
+      padding: 0;
+    }
+
+    li {
+      margin: 0.3rem 0;
+    }
+
+    ol {
+      margin: 0.8rem 0 1rem 1.2rem;
+      padding: 0;
+    }
+
+    .warning-box {
+      background: #fef2f2;
+      border-left: 4px solid var(--warning);
+      padding: 1rem;
+      margin: 1.2rem 0;
+      border-radius: 6px;
+    }
+
+    .warning-box strong {
+      color: var(--warning);
+    }
+
+    .email-display {
+      background: var(--bg);
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      font-family: monospace;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin: 0.5rem 0;
+      word-break: break-word;
+      border: 1px dashed #d7dbe3;
+      min-height: 46px;
+    }
+
+    .reveal-email {
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--heading);
+      cursor: pointer;
+      font: inherit;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+    }
+
+    .reveal-email:hover {
+      border-color: var(--accent);
+    }
+
+    .contact {
+      color: var(--accent);
+      text-decoration: none;
+      background: #ffffff;
+      border: 1px solid #d7dbe3;
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      word-break: break-word;
+    }
+
+    .contact:hover,
+    .contact:focus-visible {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+      outline: none;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.75rem;
+      }
+
+      .policy {
+        padding: 1.2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="policy">
+    <h1>Delete Your Account</h1>
+
+    <p>
+      We understand that you may want to delete your campus account. This page explains how you can request account deletion through two convenient methods.
+    </p>
+
+    <div class="warning-box">
+      <strong>⚠️ Important:</strong> Deleting your account is permanent. All your data, including your profile and down requests will be removed and cannot be recovered.
+    </div>
+
+    <h2>Method 1: Delete via the App Settings (Immediate)</h2>
+
+    <p>The fastest way to delete your account is directly through the app:</p>
+
+    <ol>
+      <li>Open the campus app on your device</li>
+      <li>Navigate to <strong>Settings</strong></li>
+      <li>Look for the <strong>Account</strong> section</li>
+      <li>Select <strong>Delete Account</strong></li>
+      <li>Confirm your request when prompted</li>
+      <li>Your account will be deleted immediately</li>
+    </ol>
+
+    <h2>Method 2: Request Deletion via Email</h2>
+
+    <p>If you prefer to request account deletion by email, send a message to:</p>
+
+    <div class="email-display">
+      <button class="reveal-email" id="reveal-email" type="button">Click to reveal support email</button>
+      <span id="email-slot" aria-live="polite"></span>
+    </div>
+
+    <p>In your email, please include:</p>
+
+    <ul>
+      <li>The email address used for your campus account</li>
+      <li>A clear statement that you request to delete your account</li>
+    </ul>
+
+    <p>Our support team will process your deletion request and confirm once your account has been removed.</p>
+
+    <h2>What Happens After Deletion?</h2>
+
+    <ul>
+      <li>Your account and all associated data will be permanently deleted</li>
+      <li>You will no longer be able to log in with your credentials</li>
+      <li>Your profile will no longer be visible to other users</li>
+      <li>You may re-register with the same email address after deletion, but this will create a new account with no previous data</li>
+    </ul>
+
+    <h2>Questions or Issues?</h2>
+
+    <p>If you have any questions about the account deletion process or encounter any issues, please contact our support team at the email address shown above.</p>
+
+    <script>
+      // Keep the full address out of static HTML and reveal it only after user interaction.
+      document.addEventListener('DOMContentLoaded', function() {
+        var revealButton = document.getElementById('reveal-email');
+        var emailSlot = document.getElementById('email-slot');
+
+        function decodeEmail() {
+          var shiftedCodes = [106, 103, 110, 114, 66, 108, 113, 107, 112, 101, 99, 111, 114, 119, 117, 48, 99, 114, 114];
+          return shiftedCodes.map(function(code) {
+            return String.fromCharCode(code - 2);
+          }).join('');
+        }
+
+        revealButton.addEventListener('click', function() {
+          var email = decodeEmail();
+          var link = document.createElement('a');
+          link.className = 'contact';
+          link.href = 'mailto:' + email;
+          link.textContent = email;
+
+          emailSlot.textContent = ' ';
+          emailSlot.appendChild(link);
+          revealButton.remove();
+        }, { once: true });
+      });
+    </script>
+  </main>
+</body>
+</html>
